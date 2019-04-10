@@ -14,7 +14,7 @@ class Background extends Component {
 
   componentDidMount () {
     const updateDate = () => this.setState({ date: moment().format('MMMM Do YYYY') })
-    const updateClock = () => this.setState({ clock: moment().format('h:mm:ss a') })
+    const updateClock = () => this.setState({ clock: moment().format('h:mm:ss A') })
     setInterval(updateClock, 500)
     setInterval(updateDate, 500)
   }
@@ -24,26 +24,27 @@ class Background extends Component {
   render () {
     const styleClock = {
       'fontSize': '10rem',
-      'textShadow': '0 20px 20px black'
+      'textShadow': '0px 10px 10px white, 0px -10px 10px white, 10px 0px 10px white, -10px 0px 10px white'
     }
 
     const styleClockInverse = {
       'fontSize': '10rem',
-      'textShadow': '0 20px 20px white',
-      'fontColor': 'black'
+      'textShadow': '0 20px 20px black'
     }
 
     const styleDate = {
       'fontSize': '2rem',
-      'textShadow': '0 20px 20px black'
+      'textShadow': '0 20px 20px white'
     }
+
+    // const clockClasses = 'text-center '
     const { date, clock, hoverClock } = this.state
 
     return (
 
-      <div className="fixed-top d-flex flex-column w-100 h-100 justify-content-center">
+      <div className="fixed-top d-flex flex-column h-100 justify-content-center">
         <h1 className="fixed-top p-2 text-light ml-auto" style={styleDate}>{date}</h1>
-        <h1 className="d-inline-block text-light text-center" style={hoverClock ? styleClock : styleClockInverse} onMouseEnter={this.hoverClock}>{clock}</h1>
+        <h1 className={hoverClock ? 'text-center text-dark' : 'text-center text-light'} style={hoverClock ? styleClock : styleClockInverse} onMouseEnter={this.hoverClock} onMouseLeave={this.hoverClock}>{clock}</h1>
       </div>
     )
   }
