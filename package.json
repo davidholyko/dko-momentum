@@ -1,9 +1,10 @@
 {
   "name": "react-template",
-  "homepage": "https://github.io/<GH USER NAME>/<REPO NAME>",
+  "homepage": "https://davidholyko.github.io/dko-momentum",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "animate.css": "^3.7.0",
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
@@ -20,6 +21,7 @@
     "react-bootstrap": "^1.0.0-beta.5",
     "react-dom": "^16.4.2",
     "react-router-dom": "^4.3.1",
+    "react-transition-group": "^1.2.1",
     "resolve": "1.6.0",
     "url-loader": "0.6.2"
   },
