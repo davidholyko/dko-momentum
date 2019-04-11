@@ -12,6 +12,12 @@ class Todo extends Component {
 
   handleChange = event => this.setState({ text: event.target.value })
 
+  enter = event => {
+    if (event.key === 'Enter') {
+      this.addReview()
+    }
+  }
+
   addReview = () => {
     if (!this.state.text) { return }
     const previousReviews = [...this.state.list]
@@ -37,18 +43,18 @@ class Todo extends Component {
     </textarea>
 
     return (
-      <div className="d-flex justify-content-center w-100" style={ position }>
-        <div className="d-flex flex-column justify-content-center w-50">
-          {list.map(item => <h1 className="text-light" key={item}>{item}</h1>)}
-          <textarea
-            id="todo-form"
-            className=""
-            onChange={this.handleChange}
-            value={text}>
-            {text}
-          </textarea>
-          <button className="btn btn-primary" onClick={this.addReview}>Save</button>
-        </div>
+      <div className="text-right m-0 w-100" style={ position }>
+        {list.map(item => <h1 className="text-light" key={item}>{item}</h1>)}
+        <textarea
+          id="todo-form"
+          className="m-0"
+          onChange={this.handleChange}
+          value={text}
+          onKeyDown={this.enter}
+          placeholder="Enter a todo item here"
+        >
+          {text}
+        </textarea>
       </div>
     )
   }
