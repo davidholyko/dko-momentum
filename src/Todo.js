@@ -24,7 +24,8 @@ class Todo extends Component {
 
     const position = {
       'position': 'absolute',
-      'bottom': '20%',
+      'bottom': '0',
+      'right': '0',
       'zIndex': 2000
     }
 
@@ -38,14 +39,15 @@ class Todo extends Component {
     return (
       <div className="d-flex justify-content-center w-100" style={ position }>
         <div className="d-flex flex-column justify-content-center w-50">
+          {list.map(item => <h1 className="text-light" key={item}>{item}</h1>)}
           <textarea
             id="todo-form"
             className=""
-            onChange={this.handleChange}>
-            {text || ''}
+            onChange={this.handleChange}
+            value={text}>
+            {text}
           </textarea>
           <button className="btn btn-primary" onClick={this.addReview}>Save</button>
-          {list.map(review => <h1 className="text-light" key={review} >{review}</h1>)}
         </div>
       </div>
     )

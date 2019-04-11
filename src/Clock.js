@@ -21,6 +21,8 @@ class Background extends Component {
 
   hoverClock = () => this.setState({ hoverClock: !this.state.hoverClock })
 
+  enterName = () => console.log('enterName')
+
   render () {
     const styleClock = {
       'fontSize': '10rem',
@@ -33,8 +35,7 @@ class Background extends Component {
     }
 
     const styleDate = {
-      'fontSize': '2rem',
-      'textShadow': '0 20px 20px white'
+      'fontSize': '2rem'
     }
 
     // const clockClasses = 'text-center '
@@ -45,6 +46,7 @@ class Background extends Component {
       <div className="fixed-top d-flex flex-column h-100 justify-content-center">
         <h1 className="fixed-top p-2 text-light ml-auto" style={styleDate}>{date}</h1>
         <h1 className={hoverClock ? 'text-center text-dark' : 'text-center text-light'} style={hoverClock ? styleClock : styleClockInverse} onMouseEnter={this.hoverClock} onMouseLeave={this.hoverClock}>{clock}</h1>
+        <h1 className="text-center text-light" onClick={this.enterName}>Please enter your name</h1>
       </div>
     )
   }
