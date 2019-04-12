@@ -50,7 +50,7 @@ class Welcome extends Component {
 
     const { text, name, openForm, clock } = this.state
     const time = +clock.substring(0, 2)
-    const namePlaceholder = 'Please click here and enter your name above'
+    const namePlaceholder = 'Click here to enter your name and press Enter'
     let welcome = ''
 
     if (time < 17) { welcome = 'Good Afternoon' }
@@ -68,13 +68,12 @@ class Welcome extends Component {
     </Fragment>
 
     return (
-
-      <Fragment>
+      <div className="d-flex flex-column justify-content-center">
         {openForm ? form : ''}
         <h1 className="text-center text-light text-shadow" onClick={this.enterName}>
           {name ? welcomeMessage : namePlaceholder}
         </h1>
-      </Fragment>
+      </div>
     )
   }
 }
