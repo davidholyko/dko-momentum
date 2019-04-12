@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import BackgroundImage0 from './images/background-0.jpg'
-import BackgroundImage1 from './images/background-1.jpg'
-import BackgroundImage2 from './images/background-2.jpg'
-import BackgroundImage3 from './images/background-3.jpg'
-import BackgroundImage4 from './images/background-5.jpg'
+import BackgroundImage0 from '../images/background-0.jpg'
+import BackgroundImage1 from '../images/background-1.jpg'
+import BackgroundImage2 from '../images/background-2.jpg'
+import BackgroundImage3 from '../images/background-3.jpg'
+import BackgroundImage4 from '../images/background-5.jpg'
 
 class Background extends Component {
   constructor () {

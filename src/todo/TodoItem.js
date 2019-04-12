@@ -5,13 +5,8 @@ class Todo extends Component {
     super()
 
     this.state = {
-      text: '',
       isComplete: false
     }
-  }
-
-  componentDidMount () {
-    this.setState({ text: this.props.text })
   }
 
   toggleComplete = () => {

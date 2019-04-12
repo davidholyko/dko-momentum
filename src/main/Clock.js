@@ -17,7 +17,7 @@ class Background extends Component {
     const updateDate = () => this.setState({ date: moment().format('MMMM Do YYYY') })
     const updateClock = () => this.setState({ clock: moment().format('h:mm:ss A') })
     setInterval(updateClock, 500)
-    setInterval(updateDate, 10000)
+    setInterval(updateDate, 1000)
   }
 
   hoverClock = () => this.setState({ hoverClock: !this.state.hoverClock })

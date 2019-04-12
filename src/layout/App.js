@@ -1,7 +1,7 @@
 import React from 'react'
 import Background from './Background'
-import Clock from './Clock'
-import Todo from './Todo'
+import Clock from '../main/Clock'
+import Todo from '../todo/Todo'
 // import { Route, Link } from 'react-router-dom'
 
 const App = () => (
