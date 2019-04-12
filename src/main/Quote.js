@@ -6,7 +6,7 @@ class Quote extends Component {
     super()
 
     this.state = {
-      quote: ''
+      quote: this.randomQuote()
     }
   }
 

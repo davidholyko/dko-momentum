@@ -7,7 +7,6 @@ class Background extends Component {
     super()
 
     this.state = {
-      hoverClock: false,
       clock: '',
       date: ''
     }
@@ -20,34 +19,18 @@ class Background extends Component {
     setInterval(updateDate, 1000)
   }
 
-  hoverClock = () => this.setState({ hoverClock: !this.state.hoverClock })
-
   render () {
-    const styleClock = {
-      'fontSize': '10rem',
-      'textShadow': '0px 10px 10px white, 0px -10px 10px white, 10px 0px 10px white, -10px 0px 10px white'
-    }
-
-    const styleClockInverse = {
-      'fontSize': '10rem',
-      'textShadow': '0 20px 20px black'
-    }
-
     const styleDate = {
       'fontSize': '2rem'
     }
 
-    const { date, clock, hoverClock } = this.state
+    const { date, clock } = this.state
 
     return (
       <div className="fixed-top d-flex flex-column h-100 justify-content-center">
         <h1 className="fixed-top p-2 text-light ml-auto" style={styleDate}>{date}</h1>
         <div className="d-flex justify-content-center">
-          <h1
-            className={hoverClock ? 'text-center text-dark' : 'text-center text-light'}
-            style={hoverClock ? styleClock : styleClockInverse}
-            onMouseEnter={this.hoverClock}
-            onMouseLeave={this.hoverClock}>
+          <h1 id="clock" >
             {clock}
           </h1>
         </div>

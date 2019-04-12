@@ -14,6 +14,10 @@ p {
   margin-bottom: 2px;
 }
 
+input:focus {
+  outline: none;
+}
+
 #root {
   height: 100vh;
   width: 100vw;
@@ -38,8 +42,15 @@ p {
   }
 }
 
-input:focus {
-  outline: none;
+#clock {
+  text-align: center;
+  font-size: 10rem;
+  color: white;
+
+  &:hover {
+    color: #333;
+    text-shadow: 0 10px 10px white, 0 -10px 10px white, 10px 0 10px white, -10px 0 10px white;
+  }
 }
 
 .line-through {
@@ -70,6 +81,17 @@ input:focus {
   max-height: 216px;
   overflow-y: auto;
   overflow-x: ellipsis;
+}
+
+#todo-toggle {
+  color: white;
+  text-shadow: 0 5px 5px black, 5px 0 5px black, -5px 0 5px black, 0 -5px 5px black;
+
+  &:hover {
+    cursor: pointer;
+    color: black;
+    text-shadow: 0 3px 3px white, 3px 0 3px white, -3px 0 3px white, 0 -3px 3px white;
+  }
 }
 
 #todo-form {

@@ -7,7 +7,8 @@ class Todo extends Component {
 
     this.state = {
       text: '',
-      todoList: []
+      todoList: [],
+      toggleTodo: false
     }
   }
 
@@ -27,8 +28,10 @@ class Todo extends Component {
     this.setState({ todoList: previousListItems, text: '' })
   }
 
+  toggleTodo = () => this.setState({ toggleTodo: !this.state.toggleTodo })
+
   render () {
-    const { todoList, text } = this.state
+    const { todoList, text, toggleTodo } = this.state
 
     const position = {
       'position': 'absolute',
@@ -37,24 +40,29 @@ class Todo extends Component {
       'zIndex': 2000
     }
 
+    const todoContainer = <div id="todo-item-container" className="text-left">
+      <h5 className="text-light text-center">Todo List</h5>
+      <div id="todo-item-content">
+        {todoList.map((item, index) => <TodoItem text={item} key={index}/>)}
+      </div>
+    </div>
+
+    const todoForm =
+    <form onKeyDown={this.enter}>
+      <input
+        id="todo-form"
+        className="m-0"
+        onChange={this.handleChange}
+        value={text}
+        placeholder="Add a Todo to get started"
+      />
+    </form>
+
     return (
       <div className="text-right m-0 w-100" style={ position }>
-        <div id="todo-item-container" className="text-left">
-          <h5 className="text-light text-center">Todo List</h5>
-          <div id="todo-item-content">
-            {todoList.map((item, index) => <TodoItem text={item} key={index}/>)}
-          </div>
-        </div>
-        <form action="">
-          <input
-            id="todo-form"
-            className="m-0"
-            onChange={this.handleChange}
-            value={text}
-            onKeyDown={this.enter}
-            placeholder="New Todo"
-          />
-        </form>
+        {toggleTodo ? todoContainer : ''}
+        {toggleTodo ? todoForm : ''}
+        <h3 id="todo-toggle" className="p-2" onClick={this.toggleTodo}>Todo</h3>
       </div>
     )
   }

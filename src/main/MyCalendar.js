@@ -21,7 +21,7 @@ class MyCalendar extends Component {
 
     return (
       <div id="calendar">
-        <h3 onClick={this.openCalendar} className="">Toggle Calendar</h3>
+        <h3 onClick={this.openCalendar}>Toggle Calendar</h3>
         {openCalendar ? calendar : ''}
       </div>
     )
