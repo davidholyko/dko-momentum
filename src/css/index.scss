@@ -25,7 +25,9 @@ input:focus {
 }
 
 #todo-item-container {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.8);
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
   z-index: 5000;
   margin-left: auto;
   width: 216px;

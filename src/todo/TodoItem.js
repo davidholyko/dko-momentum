@@ -3,14 +3,12 @@ import React, { Component } from 'react'
 class Todo extends Component {
   constructor () {
     super()
-
     this.state = {
       isComplete: false
     }
   }
 
   toggleComplete = () => {
-    console.log('toggleComplete')
     this.setState({ isComplete: !this.state.isComplete })
   }
 

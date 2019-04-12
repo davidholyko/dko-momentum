@@ -7,7 +7,7 @@ class Todo extends Component {
 
     this.state = {
       text: '',
-      list: []
+      todoList: []
     }
   }
 
@@ -15,19 +15,19 @@ class Todo extends Component {
 
   enter = event => {
     if (event.key === 'Enter') {
-      this.addReview()
+      this.addTodoItem()
     }
   }
 
-  addReview = () => {
+  addTodoItem = () => {
     if (!this.state.text) { return }
-    const previousReviews = [...this.state.list]
-    previousReviews.push(this.state.text)
-    this.setState({ list: previousReviews, text: '' })
+    const previousListItems = [...this.state.todoList]
+    previousListItems.push(this.state.text)
+    this.setState({ todoList: previousListItems, text: '' })
   }
 
   render () {
-    const { list, text } = this.state
+    const { todoList, text } = this.state
 
     const position = {
       'position': 'absolute',
@@ -39,7 +39,10 @@ class Todo extends Component {
     return (
       <div className="text-right m-0 w-100" style={ position }>
         <div id="todo-item-container" className="text-left">
-          {list.map((item, index) => <TodoItem text={item} key={index}/>)}
+          <h5 className="text-light text-center">Todo List</h5>
+          <div id="todo-item-content">
+            {todoList.map((item, index) => <TodoItem text={item} key={index}/>)}
+          </div>
         </div>
         <form action="">
           <input
