@@ -72,7 +72,9 @@ class Name extends Component {
 
       <div className="">
         {openForm ? form : ''}
-        <h1 className="text-center text-light" onClick={this.enterName}>{name ? welcomeMessage : namePlaceholder}</h1>
+        <h1 className="text-center text-light" onClick={this.enterName}>
+          {name ? welcomeMessage : namePlaceholder}
+        </h1>
       </div>
     )
   }

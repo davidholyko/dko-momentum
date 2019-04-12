@@ -15,11 +15,12 @@ class Todo extends Component {
 
   enter = event => {
     if (event.key === 'Enter') {
-      this.addTodoItem()
+      this.addTodoItem(event)
     }
   }
 
-  addTodoItem = () => {
+  addTodoItem = event => {
+    event.preventDefault()
     if (!this.state.text) { return }
     const previousListItems = [...this.state.todoList]
     previousListItems.push(this.state.text)
