@@ -52,7 +52,7 @@ class Todo extends Component {
             onChange={this.handleChange}
             value={text}
             onKeyDown={this.enter}
-            placeholder="Enter a todo item here"
+            placeholder="New Todo"
           />
         </form>
       </div>

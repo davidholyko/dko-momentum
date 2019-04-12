@@ -40,7 +40,6 @@ class Background extends Component {
     const { date, clock, hoverClock } = this.state
 
     return (
-
       <div className="fixed-top d-flex flex-column h-100 justify-content-center">
         <h1 className="fixed-top p-2 text-light ml-auto" style={styleDate}>{date}</h1>
         <h1 className={hoverClock ? 'text-center text-dark' : 'text-center text-light'} style={hoverClock ? styleClock : styleClockInverse} onMouseEnter={this.hoverClock} onMouseLeave={this.hoverClock}>{clock}</h1>

@@ -4,6 +4,10 @@ body {
   padding: 0;
 }
 
+h1 {
+  color: white;
+}
+
 p {
   max-width: 216px;
   word-break: break-all;
@@ -16,6 +20,24 @@ p {
   max-width: 100%;
 }
 
+#calendar {
+  padding: 0.5rem;
+  text-align: right;
+  right: 0;
+  position: absolute;
+  z-index: 5000;
+  opacity: 0.8;
+  color: white;
+  text-shadow: 0 5px 5px black, 5px 0 5px black, -5px 0 5px black, 0 -5px 5px black;
+
+  &:hover > h3 {
+    cursor: pointer;
+    color: black;
+    text-shadow: 0 3px 3px white, 3px 0 3px white, -3px 0 3px white, 0 -3px 3px white;
+    opacity: 1;
+  }
+}
+
 input:focus {
   outline: none;
 }
@@ -24,14 +46,22 @@ input:focus {
   text-decoration: line-through;
 }
 
+#quote {
+  max-width: calc(100vw - 216px);
+  font-weight: bold;
+  font-style: italic;
+}
+
 .text-shadow {
   text-shadow: 0 20px 20px black;
 }
 
+.text-shadow-close {
+  text-shadow: 0 10px 10px black, 10px 0 10px black, -10px 0 10px black, 0 -10px 10px black;
+}
+
 #todo-item-container {
   background-color: rgba(0,0,0,0.8);
-  margin-bottom: 1rem;
-  border-radius: 0.5rem;
   z-index: 5000;
   margin-left: auto;
   width: 216px;
@@ -40,4 +70,17 @@ input:focus {
   max-height: 216px;
   overflow-y: auto;
   overflow-x: ellipsis;
+}
+
+#todo-form {
+  background-color: rgba(0,0,0,0.8);
+  width: 216px;
+  max-width: 216px;
+  color: white;
+  border: 0;
+  padding: 0.5rem;
+
+  &:focus {
+    outline: none;
+  }
 }
