@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TodoItem from './TodoItem'
 
 class Todo extends Component {
   constructor () {
@@ -35,26 +36,21 @@ class Todo extends Component {
       'zIndex': 2000
     }
 
-    const textarea = <textarea
-      id="todo-form"
-      className=""
-      onChange={this.handleChange}>
-      {text}
-    </textarea>
-
     return (
       <div className="text-right m-0 w-100" style={ position }>
-        {list.map(item => <h1 className="text-light" key={item}>{item}</h1>)}
-        <textarea
-          id="todo-form"
-          className="m-0"
-          onChange={this.handleChange}
-          value={text}
-          onKeyDown={this.enter}
-          placeholder="Enter a todo item here"
-        >
-          {text}
-        </textarea>
+        <div id="todo-item-container" className="text-left">
+          {list.map((item, index) => <TodoItem text={item} key={index}/>)}
+        </div>
+        <form action="">
+          <input
+            id="todo-form"
+            className="m-0"
+            onChange={this.handleChange}
+            value={text}
+            onKeyDown={this.enter}
+            placeholder="Enter a todo item here"
+          />
+        </form>
       </div>
     )
   }
