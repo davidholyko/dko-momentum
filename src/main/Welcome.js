@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import moment from 'moment'
 
-class Name extends Component {
+class Welcome extends Component {
   constructor () {
     super()
 
@@ -49,17 +49,16 @@ class Name extends Component {
     }
 
     const { text, name, openForm, clock } = this.state
+    const time = +clock.substring(0, 2)
     const namePlaceholder = 'Please click here and enter your name above'
-    // const welcomes = ['Good Morning', 'Good Afternoon', 'Good Evening']
     let welcome = ''
 
-    const time = +clock.substring(0, 2)
-
-    if (time < 12) { welcome = 'Good Morning' }
     if (time < 17) { welcome = 'Good Afternoon' }
+    if (time < 12) { welcome = 'Good Morning' }
     if (time < 4 || time > 17) { welcome = 'Good Evening' }
+    if (time > 17 && time < 20) { welcome = 'Happy Hour Time, Go Get A Drink' }
 
-    const welcomeMessage = `${welcome} ${name}`
+    const welcomeMessage = `${welcome}, ${name}.`
 
     const form =
     <Fragment>
@@ -70,14 +69,14 @@ class Name extends Component {
 
     return (
 
-      <div className="">
+      <Fragment>
         {openForm ? form : ''}
-        <h1 className="text-center text-light" onClick={this.enterName}>
+        <h1 className="text-center text-light text-shadow" onClick={this.enterName}>
           {name ? welcomeMessage : namePlaceholder}
         </h1>
-      </div>
+      </Fragment>
     )
   }
 }
 
-export default Name
+export default Welcome

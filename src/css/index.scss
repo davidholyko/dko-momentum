@@ -24,6 +24,10 @@ input:focus {
   text-decoration: line-through;
 }
 
+.text-shadow {
+  text-shadow: 0 20px 20px black;
+}
+
 #todo-item-container {
   background-color: rgba(0,0,0,0.8);
   margin-bottom: 1rem;

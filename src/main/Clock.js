@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Name from './Name'
+import Welcome from './Welcome'
 import moment from 'moment'
 
 class Background extends Component {
@@ -44,7 +44,7 @@ class Background extends Component {
       <div className="fixed-top d-flex flex-column h-100 justify-content-center">
         <h1 className="fixed-top p-2 text-light ml-auto" style={styleDate}>{date}</h1>
         <h1 className={hoverClock ? 'text-center text-dark' : 'text-center text-light'} style={hoverClock ? styleClock : styleClockInverse} onMouseEnter={this.hoverClock} onMouseLeave={this.hoverClock}>{clock}</h1>
-        <Name />
+        <Welcome />
       </div>
     )
   }
