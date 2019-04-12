@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './css/index.scss'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import App from './main/App'
 import { HashRouter } from 'react-router-dom'
+import App from './layout/App'
 
 const appJsx = (
   <HashRouter>
