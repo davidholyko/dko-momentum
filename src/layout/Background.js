@@ -22,7 +22,7 @@ class Background extends Component {
 
   componentDidMount () {
     const chooseImage = () => this.setState({ currentImage: this.state.images[(Math.random() * 5) | 0] })
-    setInterval(chooseImage, 5000)
+    setInterval(chooseImage, 10000)
   }
 
   render () {

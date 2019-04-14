@@ -12,7 +12,7 @@ class Quote extends Component {
 
   componentDidMount () {
     const updateQuote = () => this.setState({ quote: this.randomQuote() })
-    setInterval(updateQuote, 10000)
+    setInterval(updateQuote, 5000)
   }
 
   randomQuote = () => {

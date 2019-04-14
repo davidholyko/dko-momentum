@@ -50,13 +50,13 @@ class Welcome extends Component {
 
     const { text, name, openForm, clock } = this.state
     const time = +clock.substring(0, 2)
-    const namePlaceholder = 'Click here to enter your name and press Enter'
+    const namePlaceholder = 'What\'s your name?'
     let welcome = ''
 
     if (time < 17) { welcome = 'Good Afternoon' }
     if (time < 12) { welcome = 'Good Morning' }
     if (time < 4 || time > 17) { welcome = 'Good Evening' }
-    if (time > 17 && time < 20) { welcome = 'Happy Hour Time, Go Get A Drink' }
+    // if (time > 17 && time < 20) { welcome = 'Happy Hour Time, Go Get A Drink' }
 
     const welcomeMessage = `${welcome}, ${name}.`
 
