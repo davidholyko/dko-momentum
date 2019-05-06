@@ -56,7 +56,7 @@ class Welcome extends Component {
     if (time < 17) { welcome = 'Good Afternoon' }
     if (time < 12) { welcome = 'Good Morning' }
     if (time < 4 || time > 17) { welcome = 'Good Evening' }
-    // if (time > 17 && time < 20) { welcome = 'Happy Hour Time, Go Get A Drink' }
+    if (time > 17 && time < 20) { welcome = 'Happy Hour Time' }
 
     const welcomeMessage = `${welcome}, ${name}.`
 
